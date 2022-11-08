@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct swiftui_starterApp: App {
+    private let itemsList = ItemsList()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ListView(itemsList: itemsList)
         }
     }
 }

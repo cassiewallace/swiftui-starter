@@ -10,5 +10,6 @@ import Foundation
 struct Item: Codable {
 
     // MARK: Properties
+    var id: Int
 
 }

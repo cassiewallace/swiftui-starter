@@ -18,6 +18,8 @@
 		CB8D8FF1291B1D1900EEF8F6 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8D8FF0291B1D1900EEF8F6 /* HTTPClient.swift */; };
 		CB8D8FF3291B1D2900EEF8F6 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8D8FF2291B1D2900EEF8F6 /* DataStore.swift */; };
 		CB8D8FF5291B1F0700EEF8F6 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8D8FF4291B1F0700EEF8F6 /* Item.swift */; };
+		CB8D8FF7291B1FDC00EEF8F6 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8D8FF6291B1FDC00EEF8F6 /* DetailView.swift */; };
+		CB8D8FF9291B201300EEF8F6 /* ItemsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8D8FF8291B201300EEF8F6 /* ItemsList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		CB8D8FF0291B1D1900EEF8F6 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		CB8D8FF2291B1D2900EEF8F6 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		CB8D8FF4291B1F0700EEF8F6 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		CB8D8FF6291B1FDC00EEF8F6 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		CB8D8FF8291B201300EEF8F6 /* ItemsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				CB8D8FC0291B132000EEF8F6 /* ListView.swift */,
+				CB8D8FF6291B1FDC00EEF8F6 /* DetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -152,6 +157,7 @@
 		CB8D8FEA291B148700EEF8F6 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				CB8D8FF8291B201300EEF8F6 /* ItemsList.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -317,9 +323,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB8D8FF9291B201300EEF8F6 /* ItemsList.swift in Sources */,
 				CB8D8FC1291B132000EEF8F6 /* ListView.swift in Sources */,
 				CB8D8FBF291B132000EEF8F6 /* swiftui_starterApp.swift in Sources */,
 				CB8D8FF1291B1D1900EEF8F6 /* HTTPClient.swift in Sources */,
+				CB8D8FF7291B1FDC00EEF8F6 /* DetailView.swift in Sources */,
 				CB8D8FF3291B1D2900EEF8F6 /* DataStore.swift in Sources */,
 				CB8D8FF5291B1F0700EEF8F6 /* Item.swift in Sources */,
 				CB8D8FEF291B16DC00EEF8F6 /* Constants.swift in Sources */,

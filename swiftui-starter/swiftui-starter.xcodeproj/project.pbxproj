@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		CB8D8FBF291B132000EEF8F6 /* swiftui_starterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8D8FBE291B132000EEF8F6 /* swiftui_starterApp.swift */; };
-		CB8D8FC1291B132000EEF8F6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8D8FC0291B132000EEF8F6 /* ContentView.swift */; };
+		CB8D8FC1291B132000EEF8F6 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8D8FC0291B132000EEF8F6 /* ListView.swift */; };
 		CB8D8FC3291B132400EEF8F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB8D8FC2291B132400EEF8F6 /* Assets.xcassets */; };
 		CB8D8FC6291B132400EEF8F6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB8D8FC5291B132400EEF8F6 /* Preview Assets.xcassets */; };
 		CB8D8FD0291B132400EEF8F6 /* swiftui_starterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8D8FCF291B132400EEF8F6 /* swiftui_starterTests.swift */; };
 		CB8D8FDA291B132400EEF8F6 /* swiftui_starterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8D8FD9291B132400EEF8F6 /* swiftui_starterUITests.swift */; };
 		CB8D8FDC291B132400EEF8F6 /* swiftui_starterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8D8FDB291B132400EEF8F6 /* swiftui_starterUITestsLaunchTests.swift */; };
+		CB8D8FEF291B16DC00EEF8F6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8D8FEE291B16DC00EEF8F6 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +37,7 @@
 /* Begin PBXFileReference section */
 		CB8D8FBB291B132000EEF8F6 /* swiftui-starter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swiftui-starter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB8D8FBE291B132000EEF8F6 /* swiftui_starterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftui_starterApp.swift; sourceTree = "<group>"; };
-		CB8D8FC0291B132000EEF8F6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CB8D8FC0291B132000EEF8F6 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		CB8D8FC2291B132400EEF8F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB8D8FC5291B132400EEF8F6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CB8D8FCB291B132400EEF8F6 /* swiftui-starterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "swiftui-starterTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +45,7 @@
 		CB8D8FD5291B132400EEF8F6 /* swiftui-starterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "swiftui-starterUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB8D8FD9291B132400EEF8F6 /* swiftui_starterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftui_starterUITests.swift; sourceTree = "<group>"; };
 		CB8D8FDB291B132400EEF8F6 /* swiftui_starterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftui_starterUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CB8D8FEE291B16DC00EEF8F6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,10 +96,8 @@
 		CB8D8FBD291B132000EEF8F6 /* swiftui-starter */ = {
 			isa = PBXGroup;
 			children = (
-				CB8D8FBE291B132000EEF8F6 /* swiftui_starterApp.swift */,
-				CB8D8FC0291B132000EEF8F6 /* ContentView.swift */,
-				CB8D8FC2291B132400EEF8F6 /* Assets.xcassets */,
-				CB8D8FC4291B132400EEF8F6 /* Preview Content */,
+				CB8D8FEB291B149300EEF8F6 /* Src */,
+				CB8D8FED291B14E600EEF8F6 /* Resources */,
 			);
 			path = "swiftui-starter";
 			sourceTree = "<group>";
@@ -125,6 +125,57 @@
 				CB8D8FDB291B132400EEF8F6 /* swiftui_starterUITestsLaunchTests.swift */,
 			);
 			path = "swiftui-starterUITests";
+			sourceTree = "<group>";
+		};
+		CB8D8FE8291B147100EEF8F6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CB8D8FC0291B132000EEF8F6 /* ListView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CB8D8FE9291B147F00EEF8F6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CB8D8FEA291B148700EEF8F6 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		CB8D8FEB291B149300EEF8F6 /* Src */ = {
+			isa = PBXGroup;
+			children = (
+				CB8D8FE9291B147F00EEF8F6 /* Models */,
+				CB8D8FEA291B148700EEF8F6 /* ViewModels */,
+				CB8D8FE8291B147100EEF8F6 /* Views */,
+				CB8D8FEC291B149E00EEF8F6 /* Utilities */,
+				CB8D8FBE291B132000EEF8F6 /* swiftui_starterApp.swift */,
+				CB8D8FEE291B16DC00EEF8F6 /* Constants.swift */,
+			);
+			path = Src;
+			sourceTree = "<group>";
+		};
+		CB8D8FEC291B149E00EEF8F6 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		CB8D8FED291B14E600EEF8F6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CB8D8FC2291B132400EEF8F6 /* Assets.xcassets */,
+				CB8D8FC4291B132400EEF8F6 /* Preview Content */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +308,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB8D8FC1291B132000EEF8F6 /* ContentView.swift in Sources */,
+				CB8D8FC1291B132000EEF8F6 /* ListView.swift in Sources */,
 				CB8D8FBF291B132000EEF8F6 /* swiftui_starterApp.swift in Sources */,
+				CB8D8FEF291B16DC00EEF8F6 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,7 +468,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"swiftui-starter/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"swiftui-starter/Resources/Preview Content/\"";
 				DEVELOPMENT_TEAM = BXF2Y7X5P8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -445,7 +497,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"swiftui-starter/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"swiftui-starter/Resources/Preview Content/\"";
 				DEVELOPMENT_TEAM = BXF2Y7X5P8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

@@ -8,11 +8,11 @@
 import Foundation
 
 enum HTTPMethods: String {
-    case DELETE = "DELETE"
-    case GET = "GET"
-    case PATCH = "PATCH"
-    case POST = "POST"
-    case PUT = "PUT"
+    case DELETE
+    case GET
+    case PATCH
+    case POST
+    case PUT
 }
 
 class HTTPClient {

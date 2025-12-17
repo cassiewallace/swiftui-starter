@@ -7,30 +7,31 @@
 
 import Foundation
 
+@MainActor
 class ItemsList: ObservableObject {
 
     // MARK: - Public Variables
     
     @Published var items = [Item]()
-    @Published var error = false
+    @Published var error: Error?
     
     // MARK: Init(s)
     
     init() {
-        getItems()
+        Task {
+            await getItems()
+        }
     }
     
     // MARK: - Public Functions
     
-    func getItems() {
-        DataStore.getItems { items in
-            guard let items = items else {
-                self.error = true
-                return
-            }
-            DispatchQueue.main.async {
-                self.items = items
-            }
+    func getItems() async {
+        do {
+            let fetchedItems = try await DataStore.getItems()
+            self.items = fetchedItems
+            self.error = nil
+        } catch {
+            self.error = error
         }
     }
 

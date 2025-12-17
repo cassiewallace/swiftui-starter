@@ -15,7 +15,7 @@ struct ListView: View {
 
     // MARK: - Body
     var body: some View {
-        NavigationView {
+        NavigationStack {
             // UNCOMMENT and replace the working List when an API endpoint is added.
             // List(itemsList.items, id: \.id) { item in
             //     NavigationLink(destination: DetailView(item: item)) {
@@ -36,7 +36,7 @@ struct ListView: View {
             }
             // END code to replace
             .listStyle(PlainListStyle())
-        .navigationBarTitle("SwiftUI Starter", displayMode: .large)
+        .navigationTitle("SwiftUI Starter")
         }
     }
     

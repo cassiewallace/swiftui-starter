@@ -12,6 +12,7 @@ struct ListView: View {
     // MARK: - Public Variables
     
     @ObservedObject var itemsList: ItemsList
+    @State private var selectedItem: Item?
 
     // MARK: - Body
     var body: some View {
@@ -23,24 +24,32 @@ struct ListView: View {
             case .loaded(let items):
                 // UNCOMMENT and replace the working List when an API endpoint is added.
                 // List(items, id: \.id) { item in
-                //     NavigationLink(value: item) {
+                //     Button {
+                //         selectedItem = item
+                //     } label: {
                 //         Text("\(item.id)")
                 //     }
                 // }
                 // START code to replace
                 List {
-                    NavigationLink(value: Item(id: 1)) {
+                    Button {
+                        selectedItem = Item(id: 1)
+                    } label: {
                         Text("Link 1")
                     }
-                    NavigationLink(value: Item(id: 2)) {
+                    Button {
+                        selectedItem = Item(id: 2)
+                    } label: {
                         Text("Link 2")
                     }
-                    NavigationLink(value: Item(id: 3)) {
+                    Button {
+                        selectedItem = Item(id: 3)
+                    } label: {
                         Text("Link 3")
                     }
                 }
                 .listStyle(.plain)
-                .navigationDestination(for: Item.self) { item in
+                .navigationDestination(item: $selectedItem) { item in
                     DetailView(item: item)
                 }
                 // END code to replace

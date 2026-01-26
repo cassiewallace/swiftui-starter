@@ -15,7 +15,7 @@ struct ListView: View {
 
     // MARK: - Body
     var body: some View {
-        NavigationView {
+        NavigationStack {
             // UNCOMMENT and replace the working List when an API endpoint is added.
             // List(itemsList.items, id: \.id) { item in
             //     NavigationLink(destination: DetailView(item: item)) {
@@ -35,8 +35,8 @@ struct ListView: View {
                 }
             }
             // END code to replace
-            .listStyle(PlainListStyle())
-        .navigationBarTitle("SwiftUI Starter", displayMode: .large)
+            .listStyle(.plain)
+            .navigationTitle("SwiftUI Starter")
         }
     }
     
@@ -45,9 +45,7 @@ struct ListView: View {
 
 // MARK: - Previews
 
-struct ListView_Previews: PreviewProvider {
-    static var previews: some View {
-        let itemsList = ItemsList()
-        ListView(itemsList: itemsList)
-    }
+#Preview {
+    let itemsList = ItemsList()
+    return ListView(itemsList: itemsList)
 }

@@ -22,7 +22,6 @@ struct DetailView: View {
             Text("View")
         }
         .navigationTitle("Detail View Navigation Title")
-        .navigationBarTitleDisplayMode(.inline)
     }
    
 }

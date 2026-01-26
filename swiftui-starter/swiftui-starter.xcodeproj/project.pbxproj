@@ -106,8 +106,12 @@
 		CB8D8FBD291B132000EEF8F6 /* swiftui-starter */ = {
 			isa = PBXGroup;
 			children = (
-				CB8D8FEB291B149300EEF8F6 /* Src */,
+				CB8D8FE9291B147F00EEF8F6 /* Models */,
+				CB8D8FEA291B148700EEF8F6 /* ViewModels */,
+				CB8D8FE8291B147100EEF8F6 /* Views */,
+				CB8D8FEC291B149E00EEF8F6 /* Utilities */,
 				CB8D8FED291B14E600EEF8F6 /* Resources */,
+				CB8D8FBE291B132000EEF8F6 /* swiftui_starterApp.swift */,
 			);
 			path = "swiftui-starter";
 			sourceTree = "<group>";
@@ -162,19 +166,6 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		CB8D8FEB291B149300EEF8F6 /* Src */ = {
-			isa = PBXGroup;
-			children = (
-				CB8D8FE9291B147F00EEF8F6 /* Models */,
-				CB8D8FEA291B148700EEF8F6 /* ViewModels */,
-				CB8D8FE8291B147100EEF8F6 /* Views */,
-				CB8D8FEC291B149E00EEF8F6 /* Utilities */,
-				CB8D8FBE291B132000EEF8F6 /* swiftui_starterApp.swift */,
-				CB8D8FEE291B16DC00EEF8F6 /* Constants.swift */,
-			);
-			path = Src;
-			sourceTree = "<group>";
-		};
 		CB8D8FEC291B149E00EEF8F6 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +180,7 @@
 			children = (
 				CB8D8FC2291B132400EEF8F6 /* Assets.xcassets */,
 				CB8D8FC4291B132400EEF8F6 /* Preview Content */,
+				CB8D8FEE291B16DC00EEF8F6 /* Constants.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";

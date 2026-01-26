@@ -49,6 +49,52 @@ class HTTPClient {
         
         dataTask.resume()
     }
+    
+    // Make a POST request to a URL.
+    // Assumes:
+    // 1) The request body uses snake_case.
+    // 2) The response uses snake_case.
+    // 3) Authorization is provided via an API key from Constants.
+    static func post<T: Encodable, U: Decodable>(url: String, body: T, completionHandler: @escaping (U?) -> Void) {
+        guard let url = URL(string: url) else { return }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = HTTPMethods.POST.rawValue
+        request.setValue(Constants.API.apiKey, forHTTPHeaderField: "Authorization")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        do {
+            let encoder = JSONEncoder()
+            encoder.keyEncodingStrategy = .convertToSnakeCase
+            request.httpBody = try encoder.encode(body)
+        } catch {
+            print("Error encoding request body: \(error)")
+            completionHandler(nil)
+            return
+        }
+        
+        let sharedSession = URLSession.shared
+        
+        let dataTask = sharedSession.dataTask(with: request) {
+            (data, response, error) in
+                do {
+                    if let jsonData = data {
+                        let decoder = JSONDecoder()
+                        decoder.keyDecodingStrategy = .convertFromSnakeCase
+                        let typedObject: U? = try decoder.decode(U.self, from: jsonData)
+                        completionHandler(typedObject)
+                    } else {
+                        completionHandler(nil)
+                    }
+                }
+                catch {
+                    print("Error decoding response: \(error)")
+                    completionHandler(nil)
+                }
+        }
+        
+        dataTask.resume()
+    }
 }
 
 

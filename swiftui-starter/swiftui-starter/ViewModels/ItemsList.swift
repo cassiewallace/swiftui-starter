@@ -17,20 +17,22 @@ class ItemsList: ObservableObject {
     // MARK: Init(s)
     
     init() {
-        getItems()
+        Task {
+            await getItems()
+        }
     }
     
     // MARK: - Public Functions
     
-    func getItems() {
-        DataStore.getItems { items in
-            guard let items = items else {
-                self.error = true
-                return
-            }
-            DispatchQueue.main.async {
-                self.items = items
-            }
+    @MainActor
+    func getItems() async {
+        do {
+            let items = try await DataStore.getItems()
+            self.items = items
+            self.error = false
+        } catch {
+            self.error = true
+            print("Error fetching items: \(error)")
         }
     }
 

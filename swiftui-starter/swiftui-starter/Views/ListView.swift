@@ -16,28 +16,50 @@ struct ListView: View {
     // MARK: - Body
     var body: some View {
         NavigationStack {
-            // UNCOMMENT and replace the working List when an API endpoint is added.
-            // List(itemsList.items, id: \.id) { item in
-            //     NavigationLink(destination: DetailView(item: item)) {
-            //         Text(item.id)
-            //     }
-            // }
-            // START code to replace
-            List {
-                NavigationLink(destination: DetailView()) {
-                    Text("Link 1")
+            switch itemsList.state {
+            case .loading:
+                ProgressView()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+            case .loaded(let items):
+                // UNCOMMENT and replace the working List when an API endpoint is added.
+                // List(items, id: \.id) { item in
+                //     NavigationLink(value: item) {
+                //         Text("\(item.id)")
+                //     }
+                // }
+                // START code to replace
+                List {
+                    NavigationLink(value: Item(id: 1)) {
+                        Text("Link 1")
+                    }
+                    NavigationLink(value: Item(id: 2)) {
+                        Text("Link 2")
+                    }
+                    NavigationLink(value: Item(id: 3)) {
+                        Text("Link 3")
+                    }
                 }
-                NavigationLink(destination: DetailView()) {
-                    Text("Link 2")
+                .listStyle(.plain)
+                .navigationDestination(for: Item.self) { item in
+                    DetailView(item: item)
                 }
-                NavigationLink(destination: DetailView()) {
-                    Text("Link 3")
+                // END code to replace
+            case .error(let message):
+                VStack(spacing: 16) {
+                    Image(systemName: "exclamationmark.triangle")
+                        .font(.largeTitle)
+                        .foregroundColor(.red)
+                    Text("Error")
+                        .font(.headline)
+                    Text(message)
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                        .multilineTextAlignment(.center)
                 }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
-            // END code to replace
-            .listStyle(.plain)
-            .navigationTitle("SwiftUI Starter")
         }
+        .navigationTitle("SwiftUI Starter")
     }
     
 }

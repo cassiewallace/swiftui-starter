@@ -11,8 +11,7 @@ struct DetailView: View {
 
     // MARK: - Variables
     
-    // UNCOMMENT the item variable when an API endpoint is added.
-    // var item: Item
+    let item: Item
 
     // MARK: - Body
     
@@ -20,6 +19,7 @@ struct DetailView: View {
         VStack(alignment: .leading, spacing: 5) {
             Text("Detail")
             Text("View")
+            Text("Item ID: \(item.id)")
         }
         .navigationTitle("Detail View Navigation Title")
     }

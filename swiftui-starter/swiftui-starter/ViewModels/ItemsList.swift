@@ -7,12 +7,17 @@
 
 import Foundation
 
+enum ItemsListState {
+    case loading
+    case loaded([Item])
+    case error(String)
+}
+
 class ItemsList: ObservableObject {
 
     // MARK: - Public Variables
     
-    @Published var items = [Item]()
-    @Published var error = false
+    @Published var state: ItemsListState = .loading
     
     // MARK: Init(s)
     
@@ -26,12 +31,12 @@ class ItemsList: ObservableObject {
     
     @MainActor
     func getItems() async {
+        state = .loading
         do {
             let items = try await DataStore.getItems()
-            self.items = items
-            self.error = false
+            state = .loaded(items)
         } catch {
-            self.error = true
+            state = .error(error.localizedDescription)
             print("Error fetching items: \(error)")
         }
     }
